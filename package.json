@@ -4,7 +4,9 @@
   "description": "a project used for the unit testing with NodeJS home task",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "start-server": "node ./src/server/server.js",
+    "eslint": "eslint ./"
   },
   "repository": {
     "type": "git",
@@ -16,6 +18,11 @@
     "url": "https://github.com/stranger2626/unit-testing-with-mocks-home-task/issues"
   },
   "homepage": "https://github.com/stranger2626/unit-testing-with-mocks-home-task#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run eslint"
+    }
+  },
   "dependencies": {
     "axios": "^0.19.2",
     "express": "^4.17.1"
