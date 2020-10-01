@@ -13,9 +13,17 @@ class UserDataHanlder {
   }
 
   getUserEmailsList () {
+    if (!this.users) throw new Error('No users loaded')
     const arrayOfEmails = this.users.map(user => user.email)
     const listOfUSerEmails = arrayOfEmails.join(';')
     return listOfUSerEmails
+  }
+
+  getNumberOfUsers () {
+    return this.users.length
+  }
+
+  findUsers (searchParamsObject) {
   }
 }
 
